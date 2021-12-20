@@ -2,11 +2,10 @@ version: '3.3'
 services:
     mock-api:
         volumes:
-            - "./mock-api:/app/mock-api:ro"
-            - /app/node_modules
+            - "./my-mock-api-folder:/app/mock-api:ro"
         environment:
-            - SUBDOMAIN=docker-api
-            - URL_PATH=/
+            - SUBDOMAIN=custom-subdomain
+            - URL_PATH=/api
         ports:
             - '3000:3000'
         container_name: mock-api
