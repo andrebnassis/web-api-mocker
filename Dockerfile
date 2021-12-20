@@ -8,7 +8,7 @@ RUN yarn
 
 COPY . ./
 
-ENV SUBDOMAIN "docker-api"
+ENV SUBDOMAIN ""
 ENV URL_PATH "/"
 
 EXPOSE 3000
