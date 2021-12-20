@@ -1,6 +1,4 @@
-FROM node:15
-
-RUN npm install -g localtunnel
+FROM node:14
 
 WORKDIR /app
 
@@ -10,6 +8,7 @@ RUN yarn
 
 COPY . ./
 
-ENV PORT 3000
+ENV MOCK_API_FOLDER "mock-api"
+ENV SUBDOMAIN "docker-api"
 
-CMD ["yarn", "dev"]
+CMD ["yarn", "docker:start"]

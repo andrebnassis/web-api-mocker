@@ -4,9 +4,10 @@
   "description": "node api mocker solution",
   "main": "index.js",
   "scripts": {
-    "start":"run-p pm2-start:app pm2-localtunnel:app",
+    "docker:start": "run-s pm2-start:app localtunnel:app",
+    "start":"run-s pm2-start:app pm2-localtunnel:app",
     "start:app": "node app.js",
-    "localtunnel:app": "lt -p 3000 -s my-docker-api", 
+    "localtunnel:app": "node localtunnel.js", 
     "pm2-start:app": "pm2 start npm --name 'app' -- run 'start:app' --watch",
     "pm2-localtunnel:app": "pm2 start npm --name 'localtunnel-app' -- run 'localtunnel:app'",
     "pm2:delete": "pm2 delete all"
