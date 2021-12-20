@@ -1,0 +1,27 @@
+{
+  "name": "node-mock-api",
+  "version": "1.0.0",
+  "description": "node api mocker solution",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev":"nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrebnassis/node-mock-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrebnassis/node-mock-api/issues"
+  },
+  "homepage": "https://github.com/andrebnassis/node-mock-api#readme",
+  "dependencies": {
+    "connect-api-mocker": "^1.10.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
