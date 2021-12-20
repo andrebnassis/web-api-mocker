@@ -8,7 +8,9 @@ RUN yarn
 
 COPY . ./
 
-ENV MOCK_API_FOLDER "mock-api"
 ENV SUBDOMAIN "docker-api"
+ENV URL_PATH "/"
+
+EXPOSE 3000
 
 CMD ["yarn", "docker:start"]

@@ -1,5 +1,7 @@
 node_modules
 Dockerfile
+docker-compose.yaml
 .dockerignore
 .git
 .gitignore
+README.md
