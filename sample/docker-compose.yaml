@@ -4,7 +4,7 @@ services:
         volumes:
             - "./data:/app/data:ro"
         environment:
-            - SUBDOMAIN=custom-subdomain
+            - SUBDOMAIN=
             - URL_PATH=/
         ports:
             - '3000:3000'
