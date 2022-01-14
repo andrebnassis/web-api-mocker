@@ -1,28 +1,28 @@
-# docker mock-api
-This repository is responsible for implementing a docker mock-api image solution for frontend `development purposes`.  
+# docker web-api-mocker
+This repository is responsible for implementing a docker web-api-mocker image solution for frontend `development purposes`.  
 Behind the scenes, It combines [connect-api-mocker](https://github.com/muratcorlu/connect-api-mocker) and [localtunnel](https://github.com/localtunnel/localtunnel) packages in a single docker image solution.
 
 You can find the local image here:
-https://hub.docker.com/r/andrebnassis/mock-api
+https://hub.docker.com/r/andrebnassis/web-api-mocker
 
 ## Hello World
 
 1. run the following command:  
 ```bash
- docker run --env SUBDOMAIN="custom-subdomain" --env URL_PATH="/api" -d -p 3000:3000 --name mock-api andrebnassis/mock-api
+ docker run --env SUBDOMAIN="custom-subdomain" --env URL_PATH="/" -d -p 3000:3000 --name web-api-mocker andrebnassis/web-api-mocker
 ```
 
 2. Then you'll be able to see an API response sample by accessing:  
-http://localhost:3000/api  
+http://localhost:3000/
 AND/OR  
-https://custom-subdomain.loca.lt/api  
+https://custom-subdomain.loca.lt/
 # Getting Started
 
-The image uses `connect api mocker` package behind the scenes, so, you can follow its [Directory Structure documentation](https://github.com/muratcorlu/connect-api-mocker#directory-structure) to create the your own api mocker folder structure
+The image uses `connect api mocker` package behind the scenes, so, you can follow its [Directory Structure documentation](https://github.com/muratcorlu/connect-api-mocker#directory-structure) to create your own web api mocker folder structure
 
-## docker-compose
+## Sample project using docker-compose
 
-The repo has a docker-compose file and you can just import it on your project, adjust to your needs, and use it.
+The repo has a `sample/` folder with a docker-compose file and sample file structure requests. You can just copy the entire folder to your project and adjust to your needs.
 
 ### Running container
 `docker-compose up -d`
@@ -35,7 +35,7 @@ The repo has a docker-compose file and you can just import it on your project, a
 You can find the complete docker run command below:
 
 ```bash
-docker run -v $(pwd)/my-mock-api-folder:/app/mock-api:ro --env SUBDOMAIN="custom-subdomain" --env URL_PATH="/api" -d -p 3000:3000 --name mock-api andrebnassis/mock-api
+docker run -v $(pwd)/data:/app/data:ro --env SUBDOMAIN="custom-subdomain" --env URL_PATH="/" -d -p 3000:3000 --name web-api-mocker andrebnassis/web-api-mocker
 ```
 
 ### port:
@@ -43,9 +43,9 @@ docker run -v $(pwd)/my-mock-api-folder:/app/mock-api:ro --env SUBDOMAIN="custom
 It runs over port 3000.
 ### volume:
 
-`$(pwd)/my-mock-api-folder:/app/mock-api:ro`:  
+`$(pwd)/data:/app/data:ro`:  
 
-- `$(pwd)/my-mock-api-folder` is the folder's path related to your `connect api mocker` mock api directory.  
+- `$(pwd)/data` is the folder's path related to your `connect api mocker` mock api directory.  
 
 ### environment variables:
 
@@ -62,15 +62,15 @@ It runs over port 3000.
 
 If you just follow the docker commands on README, here it is some tips that will fits you:
 ## Enter inside the container  
-`docker exec -it mock-api bash`
+`docker exec -it web-api-mocker bash`
 
 ## Check logs inside container  
-`docker logs mock-api`
+`docker logs web-api-mocker`
 
 ## FORCE REMOVE CONTAINER  
-`docker rm -f mock-api`
+`docker rm -f web-api-mocker`
 
 ## FORCE REMOVE IMAGE  
-`docker image rm andrebnassis/mock-api`
+`docker image rm andrebnassis/web-api-mocker`
 ## Build the image locally using Dockerfile
-`docker build -t "andrebnassis/mock-api:latest"`
+`docker build -t "andrebnassis/web-api-mocker:latest"`

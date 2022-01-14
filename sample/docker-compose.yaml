@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+    web-api-mocker:
+        volumes:
+            - "./data:/app/data:ro"
+        environment:
+            - SUBDOMAIN=custom-subdomain
+            - URL_PATH=/
+        ports:
+            - '3000:3000'
+        container_name: web-api-mocker
+        image: andrebnassis/web-api-mocker

@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const app = express();
 const PORT =  3000; 
-const MOCK_API_FOLDER = 'mock-api'
+const MOCK_API_FOLDER = 'data'
 const URL_PATH = process.env.URL_PATH || '/';
 app.use(cors());
 app.use(URL_PATH, apiMocker(MOCK_API_FOLDER));
