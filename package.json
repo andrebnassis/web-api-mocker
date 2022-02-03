@@ -4,7 +4,6 @@
   "description": "node api mocker solution",
   "main": "index.js",
   "scripts": {
-    "test": "echo ${SUBDOMAIN}",
     "docker:start": "run-s pm2-start:app localtunnel:app",
     "start":"run-s pm2-start:app pm2-localtunnel:app",
     "start:app": "node app.js",
