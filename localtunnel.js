@@ -3,6 +3,9 @@ const localtunnel = require('localtunnel');
 const PORT = 3000;
 const SUBDOMAIN = process.env.SUBDOMAIN;
 
+if(SUBDOMAIN !== undefined)
+{
+
 (async () => {
   const tunnel = await localtunnel({ port: PORT, subdomain: SUBDOMAIN || undefined});
 
@@ -14,3 +17,5 @@ const SUBDOMAIN = process.env.SUBDOMAIN;
     // tunnels are closed
   });
 })();
+
+}
