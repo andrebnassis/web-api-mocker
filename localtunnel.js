@@ -16,6 +16,10 @@ if(SUBDOMAIN !== undefined)
   tunnel.on('close', () => {
     // tunnels are closed
   });
+  
 })();
 
+}
+else{
+  console.log("ENV SUBDOMAIN is undefined. No WorldWide link was generated.");
 }

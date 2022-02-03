@@ -50,7 +50,9 @@ It runs over port 3000.
 
 `SUBDOMAIN=""`:  
 - (OPTIONAL) It is the subdomain of the url. It generates the url `https://<SUBDOMAIN>.loca.lt/`.  
-> PS: If not passed or is already in use, it generates a **random subdomain** and you can check by running `docker logs` command on your container
+> PS:
+>> If not passed, it will not generate any WorldWide link.
+>> If passed as empty string or if passed an already in subdomain, it generates a **random subdomain** and you can check by entering inside the container and running `yarn pm2:logs` command on your container
 
 `URL_PATH`:  
 - (OPTIONAL) It is a path related to the url. For example: `"/api"`.  
@@ -61,7 +63,7 @@ It runs over port 3000.
 
 If you just follow the docker commands on README, here it is some tips that will fits you:
 ## Enter inside the container  
-`docker exec -it web-api-mocker bash`
+`docker exec -it web-api-mocker sh`
 
 ## Check logs inside container  
 `docker logs web-api-mocker`
