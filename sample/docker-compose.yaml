@@ -4,7 +4,7 @@ services:
         volumes:
             - "./data:/app/data:ro"
         environment:
-            - SUBDOMAIN=
+            # - SUBDOMAIN= ##Uncomment this line if you want to generate a WorldWide link
             - URL_PATH=/
         ports:
             - '3000:3000'

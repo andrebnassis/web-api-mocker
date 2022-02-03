@@ -50,9 +50,11 @@ It runs over port 3000.
 
 `SUBDOMAIN=""`:  
 - (OPTIONAL) It is the subdomain of the url. It generates the url `https://<SUBDOMAIN>.loca.lt/`.  
-> PS:
->> If not passed, it will not generate any WorldWide link.
->> If passed as empty string or if passed an already in subdomain, it generates a **random subdomain** and you can check by entering inside the container and running `yarn pm2:logs` command on your container
+
+> If **not passed**, it will **NOT** generate any WorldWide link.
+
+> If passed as **empty string** or if passed an **already existant** subdomain, it generates a **random subdomain**.  
+You can check by **entering inside the container** and running `yarn pm2:logs` command on your container
 
 `URL_PATH`:  
 - (OPTIONAL) It is a path related to the url. For example: `"/api"`.  
@@ -74,4 +76,4 @@ If you just follow the docker commands on README, here it is some tips that will
 ## FORCE REMOVE IMAGE  
 `docker image rm andrebnassis/web-api-mocker`
 ## Build the image locally using Dockerfile
-`docker build -t "andrebnassis/web-api-mocker:latest"`
+`docker build . -t "andrebnassis/web-api-mocker:latest"`
